@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    /*en aling items center es para centrar en la mitad de la fila*/
+nav{
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+
+    #logo{
+        margin-left: 50px;
+    }
+
+    #logomobile{
+        display: none;
+    }
+
+    .links{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+
+        .idiomas{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+
+            img{
+                margin-right: 40px;
+            }
+            
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .grey{
+            color: #7E7E7E;
+        }
+
+        .registro{
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            
+            
+            a{
+                justify-self: center
+            }
+
+            #rayamedia{
+                height: 100%;
+                width: 1px;
+                background-color: white;
+                /* la raya media es la que esta entre el log in y el sing up*/
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    html{
+        background-color: lightgreen;
+    }
+}
+
+/*Vamos a darle todas las propiedades y características a nuestro fondo
+
+Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamos el responsivo*/
+#imgprincipal{
+    width: 100%;
+    height: 1350px;
+    object-fit: cover;
+}
+
+#topbar{
+    background-color: rgba(10, 19, 1, .3);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+}
+
+/*Vamos a empezar a posicionar los títulos de acuerdo al sigma*/
+
+#titulos{
+    position: absolute; /*para subir o bajar un bloque en este caso tengo dentro de titulos a: luxury, real estate y view all propertier, utilizo primero el position absolute y luego lo subo o lo bajo con  top*/
+    top: 450px;
+    margin-left: 7vw; /*para que se mueva el bloque del borde dde la pantalla hacia la izquierda, utilizo el margin left*/
+    color: white;
+    h2{
+        color: #B4B7B7;
+        font-family:;
+    }
+    
+    button{
+        background-color: transparent;
+        border-color: white;
+        border-radius: 50px;
+        border: 1px solid;
+        padding: 15px;
+        color: white;
+        width: 250px;
+        height: 50px;
+        /*el buttom esta dentro de los titulos, por eso no tiene # o punto(.)*/
+    }
+
+}
+
+/*Vamos a poner el follow y los íconos de las redes sociales*/
+
+#redes{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 41px 25px 25px 25px 25px;
+        width: 45px;
+        justify-items: center;
+        position: fixed;
+        top: 350px;
+        left: 25px;
+        /*utilice el left para posicionar mi bloque más a la derecha*/
+    
+
+    img{
+        display: block; /*para que lass imágenes se vayan una abajo de la otra*/
+        margin-top: 20px;
+    }
+
+    p{
+        transform: rotate(90deg);
+        display: inline-block;
+        color: #7E7E7E;
+    }
+
+    #rayita{
+        height: 30px;
+        width: 1px;
+        border-left: 1px solid;
+        margin-top: 25px;
+
+        
+    }
+}
+
+
+
+
+
