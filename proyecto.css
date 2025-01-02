@@ -1,7 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*clase del 13 y 19 de diciembre con Bauti y Juan*/
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     /*en aling items center es para centrar en la mitad de la fila*/
 nav{
@@ -72,7 +73,8 @@ nav{
 
 /*Vamos a darle todas las propiedades y características a nuestro fondo
 
-Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamos el responsivo*/
+/*clase 19 de diciembre con Juan*/
+/*Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamos el responsivo*/
 #imgprincipal{
     width: 100%;
     height: 1350px;
@@ -127,7 +129,7 @@ Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamo
     
 
     img{
-        display: block; /*para que lass imágenes se vayan una abajo de la otra*/
+        display: block; /*para que las imágenes se vayan una abajo de la otra*/
         margin-top: 20px;
     }
 
@@ -146,6 +148,212 @@ Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamo
         
     }
 }
+
+/*clase del 18/12/2024 con Bauti, seccion 1 tres imagenes en el 50% de la pantalla y contenido: texto / botones en el otro 50% de la pantalla, línea desde la 152 a la */
+.seccion1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        
+        .primera{
+            grid-column: span 2;
+        }
+
+        .ultimas{
+            grid-column: span 5;
+            position: relative;
+        }
+
+        .textos{
+            position: absolute;
+            transform: translateY(-100%);
+            padding: 20px;
+            /*utilizo el positio absolute, transsform-translatey, padding 20px,  para subir el texto que se encontraba fuera de la imagen*/
+        }
+
+        .textosuno{
+            color: white;
+        }
+
+        .textosdos{
+            color: black;
+            background-color: white;
+            width: 100%;
+        }
+
+        *{
+             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+         width: 100%;
+         height: auto%;
+         object-fit: cover;
+        }
+
+    }
+/*Contenido: 
+aquí empezamos la segunda sección de contenido en el cual tenemos textos y boton*/
+
+    .contenido{
+        display: grid;
+        padding-right: 100px;
+
+        .botones{
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            align-items: center;
+            
+            .medio{
+                background-color: transparent;
+                border-radius: 50px;
+                height: fit-content;
+                /*el fit-content me sirve para que mi boton de View all properties se achique y llegue a medir casi mi texto*/
+                font-size: 24px;
+                /*el font-size me sirve para que mi boton de View all properties se despegue con los px de mi texto*/    
+                padding: 12px;
+            }
+
+            .direcciones{
+                background-color: transparent;
+                border: none;
+            }
+
+            .prev{
+                color: #B4B7B7;
+            }
+
+            .next{
+                color: #df991b;
+            }
+        }
+
+        .textos{
+            font-size: 30px; /*el font-size sirve para subir el tamaño de la letra*/
+            text-align: right; /*con el text-alige rigth se va para el lado derecho justificando todo el texto*/
+            h6{
+                color: #df991b;
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 1000px) {
+    /* aquí estoy haaciendo el responsivo de la seccion1*/
+
+    .seccion1{
+        grid-template-columns: 1fr;
+
+        .contenido{
+            display: none;
+        }
+
+        .galeria{
+            .primera{
+                /* uso esta propiedad  display-none,para que no me aparezca la primera foto cuando achico la pantalla,  como es es caso del los celulares*/
+                display: none;
+            }
+
+            .segunda{
+                /* uso esta propiedad  grid-column span 10,para que la segunda imagen me aparezca cuando achico la pantalla,  como es es caso del los celulares*/
+                grid-column: span 10;
+            }
+
+            .tercera{
+                /* uso esta propiedad  grid-column span 2,para que la segunda imagen me aparezca cuando achico la pantalla,  como es es caso del los celulares*/
+                grid-column:  span 2;
+            }
+
+            .textos{
+                display: none;
+            }
+        }
+    }
+}
+  
+section{
+    background-color: #df991b;
+    grid-column: span 12;
+    min-height: 100vh;
+}
+
+    #galeria{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr );
+        column-gap: 1%;
+    }
+
+
+     #galeria img{
+                width: 100%;
+            }
+
+   
+.contenedor{
+    max-height: 64%;
+    overflow: hidden;
+    /*el porcentaje del max-height me permite subir la imagen hasta donde yo lo quiero,  me recorta sin afectar los px*/
+    }
+
+    /* Estilos para el texto */
+.texto h6 {
+    color: #464547;
+    font-size: 25px; 
+    width: 100%;
+    margin-left: 20px;
+}
+.texto h5{
+    color: black;
+    font-size: 40px; 
+    width: 100%;
+    margin-left: 20px;
+}
+
+/*desde este punto vamos a empezar a armar el footer*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    height: 500px; /*corresponde al alto del footer*/
+    width: 100%;
+    background-color: black;
+    margin-top: 150px;
+
+        
+        .cuadro1{
+            height: 200px; /*corresponde al alto del cuadro 1*/
+            background-color: #26282b;
+            width: 80%;
+            margin: auto;
+            transform: translateY(-50%); /*con el transform- translate-y: me mueve el cuadro para arriba, abajo, izquierda o derecha*/
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            #textfooter{
+                font-size: 30px;
+                color: white;
+
+                span{
+                    color: #df991b;
+                }
+            }
+        }
+}
+
+
 
 
 
