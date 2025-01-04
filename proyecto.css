@@ -249,7 +249,7 @@ aquí empezamos la segunda sección de contenido en el cual tenemos textos y bot
 
 
 @media (max-width: 1000px) {
-    /* aquí estoy haaciendo el responsivo de la seccion1*/
+    /* aquí estoy haciendo el responsivo de la seccion1*/
 
     .seccion1{
         grid-template-columns: 1fr;
@@ -327,34 +327,140 @@ section{
 }
 
 footer{
-    height: 500px; /*corresponde al alto del footer*/
+    /*clase del 17 de diciembre, teniamos un height de 500 al principio para ver el alto de nuestro contenedor,  pero lo sacamos al ultimo para que nuestross textos ocupen el espacio asignado*/
     width: 100%;
     background-color: black;
     margin-top: 150px;
 
+    .cuadronegro{
+        color: white;
+        display: grid;
+        width: 80%;
+        margin: auto;
+        gap: 20px;
+    }
+
+    .enlaces{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .primera{
+            align-self: self-end;
+        }
+
+        .segunda{
+            align-self: center;
+        }
+
+        .tercera{
+            align-self: self-end;
+        }
+
+        .medio{
+            justify-self: center; /*utilizo el justify-self: center para centrar el texto dentro de la columna a la misma altura,  no puedo utilizar el text-aligne: center ya que me estaría centrando el texto( osea que si un texto es mas largo que el otro el más pequeño me centra en referenci al texto más grande*/
+        }
+
+        .ultima{
+            text-align: right;
+            align-self: self-end;
+        }
+    }
+
+    .copyright{
+        border-top: solid 1px white;
+            p{
+              text-align: center;
+              margin: 20px 0;
+             }
         
-        .cuadro1{
-            height: 200px; /*corresponde al alto del cuadro 1*/
+    }
+
+        
+        .seccionuno{ 
+            /*cuando nuestro elemento tiene una class selecionamos con un punto
+            teniamos un height de 250 al principio para ver el alto de nuestro contenedor,  pero lo sacamos para que nuestross textos ocupen el espacio*/ 
+
             background-color: #26282b;
             width: 80%;
             margin: auto;
             transform: translateY(-50%); /*con el transform- translate-y: me mueve el cuadro para arriba, abajo, izquierda o derecha*/
             display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: center;
+            
+
+            .botones{
+                display: grid;
+                padding: 50px; /*este padding permite que mi boton se aleje desde el margen derecho hacia adentro*/
+                gap: 10px; /*para utilizar el gap siempre debe haber u display grid,  el gap me ayuda a que mis botones se separen*/              
+                
+                input{
+                    background-color: transparent;
+                    border: solid 0.5px #7E7E7E;
+                    border-radius: 25px;
+                    padding: 15px; /*este padding me ayuda a que mi texto se despegue del borde*/
+                    font-size: 15px; /*corresponde al tamaño de fuente dentro del boton*/
+                }
+
+                button{
+                    background-color: transparent;
+                    border: solid 0.5px #df991b;
+                    color: #df991b;
+                    border-radius: 25px;
+                    padding: 15px; /*este padding me ayuda a que mi texto se despegue del borde*/
+                    font-size: 15px; /*corresponde al tamaño de fuente dentro del boton*/
+                    width: 60%; /*con width estoy ocupando el 60% del contenedor, en relación al coton de arriba*/
+                    justify-self: end; /* el boton lo muevo al lado derecho*/
+                }
+               
+
+                p{
+                    margin-left: 20px;
+                    color: white;
+                    font-size: 20px;
+                }
+            }
 
             #textfooter{
                 font-size: 30px;
                 color: white;
+                /*para seleccionar por id le llamamos por #*/
+                justify-self: center;
+                
 
-                span{
+                span{ /*cuando es un selector utilizamos o llamamos con el nombre de la etiqueta*/
                     color: #df991b;
                 }
             }
         }
 }
 
+@media (max-width: 1000px) {
+    /* aquí estoy haciendo el responsivo para el footer seccionUno*/
+    footer{
+        .seccionuno{
+            display: none;
+        }
 
+        .cuadronegro{
+            .enlaces{
+                grid-template-columns: repeat(2, 1fr);
 
+                .primera{
+                    grid-column: span 2;
+                }
+
+                .ultima{
+                    grid-column: span 2;
+                    margin-top: 30px;
+                }
+            }
+            .copyright{
+                display: none;
+            }
+        }
+    }
+}
 
 
 
