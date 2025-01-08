@@ -1,19 +1,31 @@
 /*clase del 13 y 19 de diciembre con Bauti y Juan*/
+
+    body{
+        overflow-x: hidden;
+        /*le puse este overflow-x/hidden porque me estaba haciendo scroll horizontal*/
+    }
+
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+       
     }
-    /*en aling items center es para centrar en la mitad de la fila*/
-nav{
+    
+nav{ 
+    /*dentro del NAV tengo logo, logo circulo, logo mobile, links y dentro de este idiomas*/
     width: 100%;
     height: 100px;
     display: grid;
     grid-template-columns: 3fr 2fr;
-    align-items: center;
+    align-items: center; /*en aling items center es para centrar en la mitad de la fila*/
 
     #logo{
-        margin-left: 50px;
+        margin-left: 50px; /*el logo de uniqluxury me mueve del izquierda a derecha en 50px*/
+    }
+
+    #logocirculo{
+        display: none;
     }
 
     #logomobile{
@@ -64,21 +76,75 @@ nav{
         }
     }
 }
+@font-face {
+    font-family: PFregaldisplay;
+    src: url(/Fuentes/PFRegalDisplayPro-Regular.ttf);
+}
+@font-face {
+    font-family: brandon;
+    src: url(/Fuentes/Brandon_light.otf);
+}
+@font-face {
+    font-family: brandong;
+    src: url(/Fuentes/Brandon_blk.otf);
+}
 
-@media (max-width: 900px) {
+.links a{    
+    width: 125px;   /* Ancho del elemento */
+    font-family: brandon;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+@media (max-width: 500px) {
+    /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de esste el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
     html{
         background-color: lightgreen;
+        
+    }
+    nav{
+        grid-template-columns: 1fr;
+
+        #logo{
+            display: none;
+        }
+
+        #logocirculo{
+            display: inline;
+            margin-left: 30px;
+        }
+        .links{
+            grid-template-columns: 1fr;
+            
+            .idiomas{
+                grid-template-columns: 1fr;
+                justify-items: end;
+                
+                a{
+                    display: none;
+                }
+            }
+            
+            .registro{
+                display: none;
+            }
+        }
     }
 }
 
-/*Vamos a darle todas las propiedades y características a nuestro fondo
-
+/* Fondo
+Vamos a darle todas las propiedades y características a nuestro fondo*/
 /*clase 19 de diciembre con Juan*/
 /*Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamos el responsivo*/
 #imgprincipal{
     width: 100%;
     height: 1350px;
     object-fit: cover;
+    
+    
 }
 
 #topbar{
@@ -86,18 +152,65 @@ nav{
     height: 100px;
     width: 100%;
     position: fixed;
+    
 }
 
 /*Vamos a empezar a posicionar los títulos de acuerdo al sigma*/
+/* Estilos para el contenedor*/
+.contbusca{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 130px;
+    right: 200px;    
+}
+
+/*Estilos para el input Ex. Villa Budapest*/
+.buscador input {
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+/*Estilos para la lupa*/
+.buscador img{
+    position: absolute;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+input::placeholder{
+    font-family: brandon;
+    color: red ;
+}
 
 #titulos{
     position: absolute; /*para subir o bajar un bloque en este caso tengo dentro de titulos a: luxury, real estate y view all propertier, utilizo primero el position absolute y luego lo subo o lo bajo con  top*/
     top: 450px;
     margin-left: 7vw; /*para que se mueva el bloque del borde dde la pantalla hacia la izquierda, utilizo el margin left*/
     color: white;
+
     h2{
         color: #B4B7B7;
-        font-family:;
+        font-family:PFregaldisplay;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 45px;
+    }
+
+    h1{
+        color: white;
+        font-family:brandon;
+        font-size: 46px;
+        line-height: 45px;
     }
     
     button{
@@ -107,11 +220,14 @@ nav{
         border: 1px solid;
         padding: 15px;
         color: white;
-        width: 250px;
-        height: 50px;
+        width: 227px;
+        height: 50px; /*para que el view ll properties quede centrado*/
         /*el buttom esta dentro de los titulos, por eso no tiene # o punto(.)*/
+        font-family: brandon;
+        
     }
 
+    
 }
 
 /*Vamos a poner el follow y los íconos de las redes sociales*/
@@ -123,7 +239,7 @@ nav{
         width: 45px;
         justify-items: center;
         position: fixed;
-        top: 350px;
+        top: 360px;
         left: 25px;
         /*utilice el left para posicionar mi bloque más a la derecha*/
     
@@ -137,6 +253,10 @@ nav{
         transform: rotate(90deg);
         display: inline-block;
         color: #7E7E7E;
+        font-family: brandong;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 45px;
     }
 
     #rayita{
@@ -149,7 +269,72 @@ nav{
     }
 }
 
-/*clase del 18/12/2024 con Bauti, seccion 1 tres imagenes en el 50% de la pantalla y contenido: texto / botones en el otro 50% de la pantalla, línea desde la 152 a la */
+@media (max-width: 320px){
+    #imgprincipal{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .contbusca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .buscador{
+        position: relative;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .buscador input{
+        width: 100%; 
+        padding: 10px;
+        padding-right: 40px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .buscador img {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+    }
+
+    #titulos {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #titulos h1, #titulos h2 {
+        font-size: 24px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+
+    #titulos button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        width: auto;
+    }
+   
+    #redes {
+        display: none; /* Oculta el contenedor de redes sociales */
+    }
+
+
+    
+}
+
+
+/*clase del 18/12/2024 con Bauti, seccion 1 tres imagenes en el 50% de la pantalla y contenido: texto / botones en el otro 50% de la pantalla*/
 .seccion1{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -161,88 +346,91 @@ nav{
         grid-template-columns: repeat(12, 1fr);
         gap: 20px;
         
-        .primera{
-            grid-column: span 2;
-        }
+            .primera{
+                grid-column: span 2;
+            }
 
-        .ultimas{
-            grid-column: span 5;
-            position: relative;
-        }
+            .ultimas{
+                grid-column: span 5;
+                position: relative;
+            }
 
-        .textos{
-            position: absolute;
-            transform: translateY(-100%);
-            padding: 20px;
-            /*utilizo el positio absolute, transsform-translatey, padding 20px,  para subir el texto que se encontraba fuera de la imagen*/
-        }
+            .textos{
+                position: absolute;
+                transform: translateY(-100%);
+                padding: 20px;
+                /*utilizo el positio absolute, transsform-translatey, padding 20px,  para subir el texto que se encontraba fuera de la imagen*/
+            }
 
-        .textosuno{
-            color: white;
-        }
+            .textosuno{
+                color: white;
+                
+            }
 
-        .textosdos{
-            color: black;
-            background-color: white;
-            width: 100%;
-        }
+            .textosdos{
+                color: black;
+                background-color: white;
+                width: 100%; /*para que me ocupe el ancho de la foto*/
+               
+            }
 
-        *{
-             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+             *{
+                 margin: 0;
+             padding: 0;
+                box-sizing: border-box;
+             }
 
-        img{
-         width: 100%;
-         height: auto%;
-         object-fit: cover;
-        }
+            img{
+                width: 100%;
+                height: auto%;
+                object-fit: cover;
+            }
 
     }
-/*Contenido: 
-aquí empezamos la segunda sección de contenido en el cual tenemos textos y boton*/
+        /*Contenido: 
+        aquí empezamos la segunda sección de contenido en el cual tenemos textos y boton*/
 
-    .contenido{
-        display: grid;
-        padding-right: 100px;
-
-        .botones{
+        .contenido{
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            align-items: center;
+            padding-right: 100px;
+
+                .botones{
+                    display: grid;
+                    grid-template-columns: 1fr 3fr 1fr;
+                    align-items: center;
             
-            .medio{
-                background-color: transparent;
-                border-radius: 50px;
-                height: fit-content;
-                /*el fit-content me sirve para que mi boton de View all properties se achique y llegue a medir casi mi texto*/
-                font-size: 24px;
-                /*el font-size me sirve para que mi boton de View all properties se despegue con los px de mi texto*/    
-                padding: 12px;
-            }
+                    .medio{
+                        background-color: transparent;
+                        border-radius: 50px;
+                        height: fit-content;
+                        /*el fit-content me sirve para que mi boton de View all properties se achique y llegue a medir casi mi texto*/
+                        font-size: 24px;
+                        /*el font-size me sirve para que mi boton de View all properties se despegue con los px de mi texto*/    
+                        padding: 12px;
+                    }
 
-            .direcciones{
-                background-color: transparent;
-                border: none;
-            }
+                    .direcciones{
+                        background-color: transparent;
+                        border: none;
+                    }
 
-            .prev{
-                color: #B4B7B7;
-            }
+                    .prev{
+                    color: #B4B7B7;
+                    }
 
-            .next{
-                color: #df991b;
-            }
-        }
+                    .next{
+                    color: #df991b;
+                    }
+                }   
 
-        .textos{
-            font-size: 30px; /*el font-size sirve para subir el tamaño de la letra*/
-            text-align: right; /*con el text-alige rigth se va para el lado derecho justificando todo el texto*/
-            h6{
-                color: #df991b;
-            }
-        }
+                    .textos{
+                        font-size: 30px; /*el font-size sirve para subir el tamaño de la letra*/
+                         text-align: right; /*con el text-alige rigth se va para el lado derecho justificando todo el texto*/
+
+                    h6{
+                        color: #df991b;
+                     }
+                    }
 
     }
 }
@@ -281,10 +469,13 @@ aquí empezamos la segunda sección de contenido en el cual tenemos textos y bot
     }
 }
   
+/*8 imagenes 4ta. sección*/
 section{
     background-color: #df991b;
     grid-column: span 12;
-    min-height: 100vh;
+    min-height: 100vh; /*Establece la altura mínima del section como el 100% del viewport height (altura de la ventana del navegador)Esto asegura que la sección siempre ocupe al menos la altura completa de la ventana, incluso si el contenido interno es más pequeño. Es útil para crear secciones de pantalla completa.*/
+    max-width: 100%; /* Limita el ancho máximo del section al 100% del contenedor padre. Asegura que la sección nunca sea más ancha que el contenedoren el que se encuentra, se evita el desborde*/
+    overflow-x: hidden; /* lo utilizamos para evitar el scroll horizontal no deseado*/
 }
 
     #galeria{
@@ -306,17 +497,21 @@ section{
     }
 
     /* Estilos para el texto */
+    
+
 .texto h6 {
     color: #464547;
     font-size: 25px; 
     width: 100%;
     margin-left: 20px;
+    font-family: PFregaldisplay;
 }
 .texto h5{
     color: black;
     font-size: 40px; 
     width: 100%;
     margin-left: 20px;
+    font-family: PFregaldisplay;
 }
 
 /*desde este punto vamos a empezar a armar el footer*/
@@ -450,9 +645,17 @@ footer{
                     grid-column: span 2;
                 }
 
+                .medio{
+                    justify-self: baseline;
+                    margin-top: 15px;
+                }
+
+                
                 .ultima{
+                    justify-self: baseline;
                     grid-column: span 2;
                     margin-top: 30px;
+                    text-align: left;
                 }
             }
             .copyright{

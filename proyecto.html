@@ -11,34 +11,45 @@
     <!--Vamos a Comenzar con el header/-->    
     <header>
         <div id="topbar">
-        <nav>
-            <!--Primer celda-->
-            <div>
-                <img src="Imagenes/uniqueluxury.png" alt="" srcset="" id="logo">
-                <img src="Imagenes/logomobile.png" alt="" srcset="" id="logomobile">
-            </div>
-            <!--Segunda celda-->
-            <div class="links">
-                <div class="registro">
-                    <a href="" class="grey">LOG IN</a>
-                    <div id="rayamedia"></div>
-                    <a href="">SING UP</a>
-                </div>
+            <nav>
+                <!--Primer celda-->
+                    <div>
+                     <img src="Imagenes/uniqueluxury.png" alt="" srcset="" id="logo">
+                      <img src="Imagenes/lupacirculo.png" alt="" id="logocirculo">
+                     <img src="Imagenes/logomobile.png" alt="" srcset="" id="logomobile">
+                    </div>
 
-                <div class="idiomas">
-                    <a href="" class="grey">ESP</a>
-                    <a href="">ENG</a>
-                    <img src="Imagenes/menuhamburguesa.png" alt="">
-                </div>
+                <!--Segunda celda-->
+                    <div class="links">
+                            <div class="registro">
+                                 <a href="" class="grey">LOG IN</a>
 
-            </div>
+                                <div id="rayamedia"></div>
+                                 <a href="">SING UP</a>
+                            </div>
+
+                            <div class="idiomas">
+                                 <a href="" class="grey">ESP</a>
+                                <a href="">ENG</a>
+                                <img src="Imagenes/menuhamburguesa.png" alt="">
+                            </div>
+
+                 </div>
         </nav>
     </div>
     </header>
 
-    <!-- Esta va a ser la sección del fondo-->
+    <!-- FONDO - Esta va a ser la sección del fondo-->
      
-    <img id="imgprincipal" src="Imagenes/fondo.png" alt="fondo">     
+    <img id="imgprincipal" src="Imagenes/fondo.png" alt="fondo">   
+    
+    <div class="contbusca">
+        <div class="buscador"> 
+            <input type="text" name="" placeholder="Ex. Villa Budapest">
+            <img src="Imagenes/lupa.png" alt="">
+        </div>
+    </div>
+    
     <div id="titulos">
         <h2>Luxury</h2>
         <h1>Real Estate</h1>
@@ -57,7 +68,8 @@
         
     </div>
 
-    <!--segunda seccion-->
+
+    <!--segunda seccion 3 imagenes-->
 
     <div class="seccion1">
 
@@ -106,7 +118,7 @@
 
     </div>
 
-    <!--vamos a empezar a integrar la seccion 3, contiene 8 imagenes con sus respectivos textos-->
+    <!--vamos a empezar a integrar la seccion 4, contiene 8 imagenes con sus respectivos textos-->
 <section>
     <div id="galeria">
         
@@ -194,8 +206,10 @@
 </section>
 
 <!--footer-->
-    <footer>
-        <div class="cuadro1">
+ <footer>
+            <!--primer celda de la seccionUno-->
+        <div class="seccionuno">
+            <!--dentro de la seccionUno tengo el textfoote (texto), tambien tengo los botones (name, email,submit)-->
             <div>
                 <p id="textfooter">
                     <span>Join the list</span>
@@ -205,10 +219,52 @@
                     the exclusive world
                 </p>
             </div>
-            <div></div>
+            <!--segunda celda de la seccionDos-->
+            <div class="botones">
+                <p>Name:</p>
+                <input type="email" placeholder="Ex.name@mail.com">
+                <button>Submit</button>
+            </div>
+        </div>
 
+        <!--aquí vamos a empezar a trabajar la sección más grande del footer que es la sección negra-->
+        <div  class="cuadronegro">
+            <div class="enlaces">
+                <div class="primera">
+                    <p>Become a New Uniq Artist</p>
+                    <p>Become a Commercial Partner</p>
+                </div>
+
+                <div class="medio segunda">
+                    <p>Suites</p>
+                    <p>Cities</p>
+                    <p>Villlas</p>
+                </div>
+
+                <div class="medio tercera">
+                    <p>Houses</p>
+                    <p>Apartaments</p>
+                    <br>
+                    <p>Contact us</p>
+                </div>
+
+                <div class="ultima">
+                    <p>Call Center</p>
+                    <p>+52 55 6840 4000</p>
+                    <br>
+                    <p>concierge@uniqueluxury.com</p>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>Copyright © 2025</p>
+            </div>
 
         </div>
+        
+
+
     </footer>    
     
 </body>

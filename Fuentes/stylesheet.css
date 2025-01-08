@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-BoldItalic.eot');
+    src: local('PFRegalDisplayPro-BoldItalic'),
+        url('PFRegalDisplayPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-BoldItalic.woff2') format('woff2'),
+        url('PFRegalDisplayPro-BoldItalic.woff') format('woff'),
+        url('PFRegalDisplayPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro UBlack';
+    src: url('PFRegalDisplayPro-UBlackItalic.eot');
+    src: local('PFRegalDisplayPro-UBlackItalic'),
+        url('PFRegalDisplayPro-UBlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-UBlackItalic.woff2') format('woff2'),
+        url('PFRegalDisplayPro-UBlackItalic.woff') format('woff'),
+        url('PFRegalDisplayPro-UBlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-Medium.eot');
+    src: local('PFRegalDisplayPro-Medium'),
+        url('PFRegalDisplayPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-Medium.woff2') format('woff2'),
+        url('PFRegalDisplayPro-Medium.woff') format('woff'),
+        url('PFRegalDisplayPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-Regular.eot');
+    src: local('PFRegalDisplayPro-Regular'),
+        url('PFRegalDisplayPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-Regular.woff2') format('woff2'),
+        url('PFRegalDisplayPro-Regular.woff') format('woff'),
+        url('PFRegalDisplayPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-Black.eot');
+    src: local('PFRegalDisplayPro-Black'),
+        url('PFRegalDisplayPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-Black.woff2') format('woff2'),
+        url('PFRegalDisplayPro-Black.woff') format('woff'),
+        url('PFRegalDisplayPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro UBlack';
+    src: url('PFRegalDisplayPro-UBlack.eot');
+    src: local('PFRegalDisplayPro-UBlack'),
+        url('PFRegalDisplayPro-UBlack.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-UBlack.woff2') format('woff2'),
+        url('PFRegalDisplayPro-UBlack.woff') format('woff'),
+        url('PFRegalDisplayPro-UBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-BlackItalic.eot');
+    src: local('PFRegalDisplayPro-BlackItalic'),
+        url('PFRegalDisplayPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-BlackItalic.woff2') format('woff2'),
+        url('PFRegalDisplayPro-BlackItalic.woff') format('woff'),
+        url('PFRegalDisplayPro-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-Italic.eot');
+    src: local('PFRegalDisplayPro-Italic'),
+        url('PFRegalDisplayPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-Italic.woff2') format('woff2'),
+        url('PFRegalDisplayPro-Italic.woff') format('woff'),
+        url('PFRegalDisplayPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-Bold.eot');
+    src: local('PFRegalDisplayPro-Bold'),
+        url('PFRegalDisplayPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-Bold.woff2') format('woff2'),
+        url('PFRegalDisplayPro-Bold.woff') format('woff'),
+        url('PFRegalDisplayPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Regal Display Pro';
+    src: url('PFRegalDisplayPro-MediumItalic.eot');
+    src: local('PFRegalDisplayPro-MediumItalic'),
+        url('PFRegalDisplayPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('PFRegalDisplayPro-MediumItalic.woff2') format('woff2'),
+        url('PFRegalDisplayPro-MediumItalic.woff') format('woff'),
+        url('PFRegalDisplayPro-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
