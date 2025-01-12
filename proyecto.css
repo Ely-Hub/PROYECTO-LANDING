@@ -11,7 +11,14 @@
         box-sizing: border-box;
        
     }
-    
+        /*primera barra topbar / nav*/
+    #topbar {
+        background-color: rgba(10, 19, 1, 0.1) !important;
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
 nav{ 
     /*dentro del NAV tengo logo, logo circulo, logo mobile, links y dentro de este idiomas*/
     width: 100%;
@@ -19,7 +26,7 @@ nav{
     display: grid;
     grid-template-columns: 3fr 2fr;
     align-items: center; /*en aling items center es para centrar en la mitad de la fila*/
-
+    
     #logo{
         margin-left: 50px; /*el logo de uniqluxury me mueve del izquierda a derecha en 50px*/
     }
@@ -76,52 +83,69 @@ nav{
         }
     }
 }
-@font-face {
-    font-family: PFregaldisplay;
-    src: url(/Fuentes/PFRegalDisplayPro-Regular.ttf);
-}
-@font-face {
-    font-family: brandon;
-    src: url(/Fuentes/Brandon_light.otf);
-}
-@font-face {
-    font-family: brandong;
-    src: url(/Fuentes/Brandon_blk.otf);
-}
 
 .links a{    
     width: 125px;   /* Ancho del elemento */
     font-family: brandon;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 45px;
     text-align: center;
     font-weight: 400;
 }
-
-
-@media (max-width: 500px) {
-    /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de esste el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
-    html{
-        background-color: lightgreen;
-        
+    @font-face {
+        font-family: PFregaldisplay;
+     src: url(/Fuentes/PFRegalDisplayPro-Regular.ttf);
     }
+    @font-face {
+        font-family: brandon;
+        src: url(/Fuentes/Brandon_light.otf);
+    }
+    @font-face {
+        font-family: brandong;
+        src: url(/Fuentes/Brandon_blk.otf);
+    }
+
+    @font-face {
+        font-family: pfrm;
+        src: url(/Fuentes/PFRegalDisplayPro-Medium.ttf);
+    }
+
+    @font-face {
+        font-family: pfrr;
+        src: url(/Fuentes/PFRegalDisplayPro-Regular.ttf);
+    }
+
+
+
+/*responsivo del nav/topbar*/
+@media (max-width: 320px) {
+    /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de este el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
     nav{
         grid-template-columns: 1fr;
-
+        
         #logo{
             display: none;
         }
 
-        #logocirculo{
-            display: inline;
-            margin-left: 30px;
+        #logocirculo {
+            display: inline-block; /* Mostrar logo circular */
+            width: 24px; /* Tamaño ajustado del logo circular */
+            height: 24px;
+            margin-left: 10px; /* Ajustar el margen si es necesario */
+            transform: translateY(31px);
         }
+
+          
         .links{
             grid-template-columns: 1fr;
             
             .idiomas{
                 grid-template-columns: 1fr;
                 justify-items: end;
+
+                img{
+                    transform: translateY(-20px);
+                }
                 
                 a{
                     display: none;
@@ -139,16 +163,17 @@ nav{
 Vamos a darle todas las propiedades y características a nuestro fondo*/
 /*clase 19 de diciembre con Juan*/
 /*Aquí vemos que el object-fit: cover le da un efecto de zoom a medida que hagamos el responsivo*/
+
 #imgprincipal{
     width: 100%;
     height: 1350px;
     object-fit: cover;
-    
-    
+    position: relative;
+    filter: brightness(0.5);
 }
 
 #topbar{
-    background-color: rgba(10, 19, 1, .3);
+    background-color: rgba(10, 19, 1, 0.5);
     height: 100px;
     width: 100%;
     position: fixed;
@@ -171,9 +196,11 @@ Vamos a darle todas las propiedades y características a nuestro fondo*/
     padding: 10px;
     padding-right: 40px;
     border-radius: 25px;
+
     border: 1px solid #ccc;
     width: 250px;
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 /*Estilos para la lupa*/
@@ -189,7 +216,7 @@ Vamos a darle todas las propiedades y características a nuestro fondo*/
 
 input::placeholder{
     font-family: brandon;
-    color: red ;
+    color: white ;
 }
 
 #titulos{
@@ -202,17 +229,17 @@ input::placeholder{
         color: #B4B7B7;
         font-family:PFregaldisplay;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 29px;
         line-height: 45px;
     }
 
     h1{
         color: white;
         font-family:brandon;
-        font-size: 46px;
+        font-size: 50px;
         line-height: 45px;
     }
-    
+  
     button{
         background-color: transparent;
         border-color: white;
@@ -220,14 +247,12 @@ input::placeholder{
         border: 1px solid;
         padding: 15px;
         color: white;
-        width: 227px;
-        height: 50px; /*para que el view ll properties quede centrado*/
+        width: px;
+        height: 60px; /*60px para que el view ll properties quede centrado*/
         /*el buttom esta dentro de los titulos, por eso no tiene # o punto(.)*/
-        font-family: brandon;
-        
+        /*font-family: brandon;*/
+        /*transform: translateX(50%);*/
     }
-
-    
 }
 
 /*Vamos a poner el follow y los íconos de las redes sociales*/
@@ -268,8 +293,9 @@ input::placeholder{
         
     }
 }
-
+/*responsivo del fondo*/
 @media (max-width: 320px){
+
     #imgprincipal{
         width: 100%;
         height: auto;
@@ -290,47 +316,62 @@ input::placeholder{
         max-width: 300px;
     }
 
-    .buscador input{
+    .buscador input{ /*boton ex. villa budapest*/
         width: 100%; 
         padding: 10px;
         padding-right: 40px;
         border-radius: 25px;
         border: 1px solid #ccc;
         box-sizing: border-box;
-    }
+        position: absolute; 
+        top: -425px;
+        /*le puse position absolute porque mi bototn se ubicaba en la parte de abajo y el top -425px es el que subio a mi boton*/
+        background-color: transparent;
+        }
+    
+        .buscador input::placeholder{ /*boton ex. villa budapest*/
+            text-align: center;
+            color: white;
+        }
 
-    .buscador img {
+    .buscador img { /*es la lupa que vadentro del ex. villa budapest*/
         position: absolute;
         right: 10px;
         top: 50%;
-        transform: translateY(-50%);
-        width: 20px;
+        transform: translateY(-2080%);
+        width: 17px;
         height: 20px;
     }
 
-    #titulos {
-        text-align: center;
-        margin-top: 20px;
+    #titulos { /*dentro de esto tengo el luxury, real estate y el button view ll properties*/
+        transform: translateY(-80%);
+        top: 450px; /* mis titulosestaban fuera del fondo y con el top 270px lo subi */
+        margin-left: 7vw; /* Ajusta si es necesario centrarlo */
+        text-align: center; /* Asegura que el contenido esté centrado */
+        
     }
 
-    #titulos h1, #titulos h2 {
-        font-size: 24px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    #titulos h1, #titulos h2 { /* h2 luxury, h1 real state */
+        font-size: 40px; /* Reduce el tamaño de la fuente para que se ajuste bien */
+        line-height: 50px;
     }
 
-    #titulos button {
-        margin-top: 20px;
-        padding: 10px 20px;
+    #titulos button { /*View all properties*/
+        padding: 10px 50px;
         border-radius: 25px;
-        font-size: 16px;
+        font-size: 8px; /* Ajusta el tamaño del texto del botón */
         width: auto;
+        height: fit-content;
+    }
+
+    #imgprincipal {
+        height: 500px; /* asegurar que el fondo tenga suficiente altura para agregar los titulos */
+        object-fit: cover;
     }
    
     #redes {
         display: none; /* Oculta el contenedor de redes sociales */
     }
-
-
-    
 }
 
 
@@ -341,46 +382,57 @@ input::placeholder{
     gap: 20px;
     padding: 20px;
 
-    .galeria{
+    .galeria{ /*estan lass 3 imagenes*/
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 20px;
-        
-            .primera{
-                grid-column: span 2;
+            *{
+                margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             }
 
-            .ultimas{
+            .primera{/*casa larga*/
+                grid-column: span 2;
+                overflow: hidden;
+                width: 74%;
+            }
+
+            .ultimas{ /*dentro de ultimas estan la casa 2 y 3*/
                 grid-column: span 5;
                 position: relative;
             }
 
-            .textos{
+            .textos{ /* dentro de textos tengo h6 england y france, h5 glasgow y marseilles*/
                 position: absolute;
                 transform: translateY(-100%);
                 padding: 20px;
                 /*utilizo el positio absolute, transsform-translatey, padding 20px,  para subir el texto que se encontraba fuera de la imagen*/
             }
 
-            .textosuno{
+            h6{ /*england y france*/
+                font-size: 25px;
+                font-family: pfrr ;
+                
+            }
+
+            h5{ /*glasgow y marseilles*/
+                font-size: 30px;
+                font-family: pfrm;
+            }
+
+            .textosuno{ /*england y france*/
                 color: white;
                 
             }
 
-            .textosdos{
+            .textosdos{ /*glasgow y marseilles*/
                 color: black;
                 background-color: white;
                 width: 100%; /*para que me ocupe el ancho de la foto*/
-               
             }
-
-             *{
-                 margin: 0;
-             padding: 0;
-                box-sizing: border-box;
-             }
-
-            img{
+            
+            img{ /*dentro de img estan todass mi imagenes*/
                 width: 100%;
                 height: auto%;
                 object-fit: cover;
@@ -390,63 +442,80 @@ input::placeholder{
         /*Contenido: 
         aquí empezamos la segunda sección de contenido en el cual tenemos textos y boton*/
 
-        .contenido{
-            display: grid;
-            padding-right: 100px;
+        .contenido{ /* mi contenido abarca el wworldwide gallery, properties for sale, prev view all properties next */
+            display: grid; /* mi grid hizo que se separe el prev, el view y el next de mi porperties for sale*/
+            padding-right: 100px; /*el padding me ayuda a tener un margen de la derecha a la izquierda, osea me lleva mis letras ubicadas de derecha a izquierda me da un margen*/
 
-                .botones{
+                .botones{ /*tengo el button prev, button "medio"view all y  button next*/
                     display: grid;
                     grid-template-columns: 1fr 3fr 1fr;
-                    align-items: center;
+                    align-items: center; /*mi boton estaba arriba y con el align item center lo baje al medio de prev y next*/
             
-                    .medio{
+                    .medio{ /* este es mi button view all properties*/
                         background-color: transparent;
                         border-radius: 50px;
                         height: fit-content;
                         /*el fit-content me sirve para que mi boton de View all properties se achique y llegue a medir casi mi texto*/
-                        font-size: 24px;
-                        /*el font-size me sirve para que mi boton de View all properties se despegue con los px de mi texto*/    
+                        font-size: 25px;
+                        /*el font-size me sirve para que mi boton de View all properties se despegue con los px de mi texto*/
+                        font-family: brandon;    
                         padding: 12px;
+                        border: 1px solid black;
                     }
 
-                    .direcciones{
+                    .direcciones{ /* como direcciones tengo al prev y al next*/
                         background-color: transparent;
                         border: none;
                     }
 
                     .prev{
                     color: #B4B7B7;
+                    font-family: brandon;   
+                    font-size: 15px; 
+
                     }
 
                     .next{
                     color: #df991b;
+                    font-family: brandon;    
+                    font-size: 15px;
                     }
                 }   
 
-                    .textos{
-                        font-size: 30px; /*el font-size sirve para subir el tamaño de la letra*/
+                    .textos{ /*worldwide gallery y properties for sale*/ 
+                        
                          text-align: right; /*con el text-alige rigth se va para el lado derecho justificando todo el texto*/
 
-                    h6{
+                    h6{ /*wordlwide gallery*/
                         color: #df991b;
+                        font-family: PFregaldisplay;
+                        font-size: 30px; /*el font-size sirve para subir el tamaño de la letra*/
                      }
+
+                    h5{ /*properties for sale*/
+                        color: black;
+                        font-family: PFregaldisplay;
+                        font-size: 60px; /*el font-size sirve para subir el tamaño de la letra*/
+                    } 
                     }
 
     }
 }
 
 
-@media (max-width: 1000px) {
-    /* aquí estoy haciendo el responsivo de la seccion1*/
-
-    .seccion1{
+@media (max-width: 320px) {
+    /* aquí estoy haciendo el responsivo de la seccion1 de lass 3 imagenes*/
+    
+    .seccion1{ /*dentro de esta seccion ya no va a ver la seccion de galería y la seccion de contenido,  es por eso que solo ponemos una sola sección con el grid-template-colum 1fr*/
         grid-template-columns: 1fr;
-
+        position: relative;
+        
         .contenido{
             display: none;
         }
 
         .galeria{
+            
             .primera{
                 /* uso esta propiedad  display-none,para que no me aparezca la primera foto cuando achico la pantalla,  como es es caso del los celulares*/
                 display: none;
@@ -460,6 +529,9 @@ input::placeholder{
             .tercera{
                 /* uso esta propiedad  grid-column span 2,para que la segunda imagen me aparezca cuando achico la pantalla,  como es es caso del los celulares*/
                 grid-column:  span 2;
+                height: 100%;
+                display: flex;
+                width: 160%;
             }
 
             .textos{
@@ -468,58 +540,153 @@ input::placeholder{
         }
     }
 }
+
+
   
+/*sección developmentes*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Cambia de 100vh a auto para que no haya espacio extra */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0; 
+}
+
+.luxury, .Developments {
+    text-align: center;
+    margin: 0px 0; 
+    padding: 0; 
+}
+
+.luxury h2 {
+    font-family: pfrr;
+    font-size: 30px;
+    line-height: 45px;
+    color: #df991b;
+    margin: 0; /* que no haya margenes adicionales*/
+}
+
+.Developments h1 {
+    font-family: pfrr;
+    font-size: 80px;
+    line-height: 45px;
+    color: #000;
+    margin: 0; /* Asegúrate de que no haya márgenes adicionales */
+}
+
+@media (max-width: 500px){
+   
+   .container{
+    grid-template-columns: 1fr;
+   }
+   .luxury h2{
+    display: none;
+   }
+   .Developments h1{
+    font-size: 35px;
+    margin-left: -70px;
+   }
+
+}
+
+
 /*8 imagenes 4ta. sección*/
 section{
-    background-color: #df991b;
     grid-column: span 12;
     min-height: 100vh; /*Establece la altura mínima del section como el 100% del viewport height (altura de la ventana del navegador)Esto asegura que la sección siempre ocupe al menos la altura completa de la ventana, incluso si el contenido interno es más pequeño. Es útil para crear secciones de pantalla completa.*/
     max-width: 100%; /* Limita el ancho máximo del section al 100% del contenedor padre. Asegura que la sección nunca sea más ancha que el contenedoren el que se encuentra, se evita el desborde*/
     overflow-x: hidden; /* lo utilizamos para evitar el scroll horizontal no deseado*/
-}
-
-    #galeria{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr );
-        column-gap: 1%;
+    padding: 100px;
     }
 
+        #galeria{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr );
+             column-gap: 1%;
+        }
 
-     #galeria img{
+
+            #galeria img{
                 width: 100%;
             }
 
    
-.contenedor{
-    max-height: 64%;
-    overflow: hidden;
-    /*el porcentaje del max-height me permite subir la imagen hasta donde yo lo quiero,  me recorta sin afectar los px*/
+    .contenedor{
+        max-height: 64%;
+        overflow: hidden;
+        /*el porcentaje del max-height me permite subir la imagen hasta donde yo lo quiero,  me recorta sin afectar los px*/
     }
 
     /* Estilos para el texto */
-    
+    .texto h6 {
+        color: #464547;
+        font-size: 17px; 
+        width: 100%;
+        margin-left: 20px;
+        font-family: pfrr;
+    }
 
-.texto h6 {
-    color: #464547;
-    font-size: 25px; 
-    width: 100%;
-    margin-left: 20px;
-    font-family: PFregaldisplay;
-}
-.texto h5{
-    color: black;
-    font-size: 40px; 
-    width: 100%;
-    margin-left: 20px;
-    font-family: PFregaldisplay;
-}
+    .texto h5{
+        color: black;
+        font-size: 25px; 
+        width: 100%;
+        margin-left: 20px;
+        font-family: PFregaldisplay;
+    }
 
-/*desde este punto vamos a empezar a armar el footer*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+       
+    @media (max-width: 320px){
+        section{
+            padding: 0;
+            margin-bottom: 0;
+            
+            #galeria{
+                grid-template-columns: 1fr;
+                display: grid;
+                gap: 10px;
+            }
+
+            #galeria img {
+                width: calc(100% - 15px); /* Se austa el ancho al 100% y los 15px margen derecho */
+                margin-right: 20px; /* Pequeño margen a la derecha */
+                height: auto; /* para mantener la proporcion original de las imagenes */
+                object-fit: cover; /* para qu se recorten correctamente */
+            }
+
+            #galeria img[src="Imagenes/2.jpg"],
+            #galeria img[src="Imagenes/4.jpg"],
+            #galeria img[src="Imagenes/5.jpg"],
+            #galeria img[src="Imagenes/6.jpg"],
+            #galeria img[src="Imagenes/8.jpg"] {
+                display: none; /* Oculta estas imágenes */
+            }
+            .contenedor {
+                max-height: none; /* Permite que las imágenes ocupen su altura completa */
+                overflow: hidden; /* Asegúrate de que no haya recortes */
+
+            }
+                       
+            .texto h6 {
+                display: none;
+            }
+        
+            .texto h5{
+                display: none;
+            }
+        }
+    }
+
+
+    /*desde este punto vamos a empezar a armar el footer*/
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 footer{
     /*clase del 17 de diciembre, teniamos un height de 500 al principio para ver el alto de nuestro contenedor,  pero lo sacamos al ultimo para que nuestross textos ocupen el espacio asignado*/
@@ -541,14 +708,20 @@ footer{
 
         .primera{
             align-self: self-end;
+            font-family: brandon;
+            font-size: 20px;
         }
 
         .segunda{
             align-self: center;
+            font-family: brandon;
+            font-size: 20px;
         }
 
         .tercera{
             align-self: self-end;
+            font-family: brandon;
+            font-size: 20px;
         }
 
         .medio{
@@ -556,8 +729,32 @@ footer{
         }
 
         .ultima{
+            display: grid;
+            grid-template-rows: auto auto 1fr;
+            align-items: start;
             text-align: right;
             align-self: self-end;
+        }
+
+        .ultima p{
+            margin-bottom: 10px;
+        }
+
+        .ultima p:first-child{
+            font-family: PFregaldisplay;
+            font-size: 25px;
+        }
+        .ultima p:nth-child(2){
+            font-family: PFregaldisplay;
+            font-size: 36px;
+            
+        }
+        .ultima p:nth-child(3){
+            font-family: brandon;
+            font-size: 20px;
+            align-self: end;
+            margin-bottom: 0;
+            color: #B4B7B7;
         }
     }
 
@@ -566,9 +763,11 @@ footer{
             p{
               text-align: center;
               margin: 20px 0;
+              font-family: brandon;
+              font-size: 20px;
              }
         
-    }
+        }
 
         
         .seccionuno{ 
@@ -582,57 +781,84 @@ footer{
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            
-
-            .botones{
+        }
+         
+            .seccionuno .botones{
                 display: grid;
                 padding: 50px; /*este padding permite que mi boton se aleje desde el margen derecho hacia adentro*/
-                gap: 10px; /*para utilizar el gap siempre debe haber u display grid,  el gap me ayuda a que mis botones se separen*/              
+                gap: 10px; /*para utilizar el gap siempre debe haber u display grid,  el gap me ayuda a que mis botones se separen*/    
+                }          
                 
-                input{
+                .seccionuno .botones input{
                     background-color: transparent;
                     border: solid 0.5px #7E7E7E;
                     border-radius: 25px;
                     padding: 15px; /*este padding me ayuda a que mi texto se despegue del borde*/
-                    font-size: 15px; /*corresponde al tamaño de fuente dentro del boton*/
+                    font-size: 20px; /*corresponde al tamaño de fuente dentro del boton*/
                 }
 
-                button{
+                .seccionuno .botones input::placeholder{
+                    color: #7E7E7E;
+                    font-family: brandon;
+                    font-size: 20px;
+                }
+
+                .seccionuno .botones button{
                     background-color: transparent;
                     border: solid 0.5px #df991b;
                     color: #df991b;
                     border-radius: 25px;
-                    padding: 15px; /*este padding me ayuda a que mi texto se despegue del borde*/
-                    font-size: 15px; /*corresponde al tamaño de fuente dentro del boton*/
-                    width: 60%; /*con width estoy ocupando el 60% del contenedor, en relación al coton de arriba*/
+                    padding: 5px; /*este padding me ayuda a que mi texto se despegue del borde*/
+                    width: 60%; /*con width estoy ocupando el 60% del contenedor, en relación al boton de arriba*/
                     justify-self: end; /* el boton lo muevo al lado derecho*/
+                    font-family: brandon;
+                    font-size: 25px;
                 }
                
-
-                p{
+                .seccionuno .botones p{
                     margin-left: 20px;
                     color: white;
-                    font-size: 20px;
+                    font-size: 25px;
+                    font-family: brandon;
                 }
-            }
+            
 
-            #textfooter{
-                font-size: 30px;
-                color: white;
-                /*para seleccionar por id le llamamos por #*/
-                justify-self: center;
+                #textfooter{
+                    font-size: 30px;
+                    color: white;
+                    /*para seleccionar por id le llamamos por #*/
+                    justify-self: center;
+                                
+                    .join{ /*cuando es un selector utilizamos o llamamos con el nombre de la etiqueta*/
+                        color: #df991b;
+                        font-family: pfrr;
+                        font-size: 26px;
+                     }
+
+                    .unlock{
+                        color: white;
+                        font-family: pfrm;
+                        font-size: 40px;
+                    }
+
+                    .the{
+                        color: white;
+                        font-family: pfrm;
+                        font-size: 40px;
+                    }
                 
-
-                span{ /*cuando es un selector utilizamos o llamamos con el nombre de la etiqueta*/
-                    color: #df991b;
                 }
-            }
-        }
+            
+        
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 320px) {
     /* aquí estoy haciendo el responsivo para el footer seccionUno*/
     footer{
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 20px; /*para tener un margen en la parte de abajo de mi email*/
+
         .seccionuno{
             display: none;
         }
@@ -661,9 +887,21 @@ footer{
             .copyright{
                 display: none;
             }
+            .ultima p:first-child{
+                display: none;
+            }
+            .ultima p:nth-child(2){
+                font-size: 25px;
+            }
         }
     }
 }
+@media (max-width: 320px) {
+    
+
+  
+}
+
 
 
 
