@@ -131,7 +131,7 @@ nav{
             display: inline-block; /* Mostrar logo circular */
             width: 24px; /* Tamaño ajustado del logo circular */
             height: 24px;
-            margin-left: 10px; /* Ajustar el margen si es necesario */
+            margin-left: 10px; /* para ajustar el el tamaño si es necesario */
             transform: translateY(31px);
         }
 
@@ -357,9 +357,10 @@ input::placeholder{
     }
 
     #titulos button { /*View all properties*/
-        padding: 10px 50px;
+        padding: 10px 5px;
         border-radius: 25px;
-        font-size: 8px; /* Ajusta el tamaño del texto del botón */
+        font-size: 15px; /* Ajusta el tamaño del texto del botón */
+        font-family: brandon;
         width: auto;
         height: fit-content;
     }
@@ -373,6 +374,43 @@ input::placeholder{
         display: none; /* Oculta el contenedor de redes sociales */
     }
 }
+
+/*esgte es mi view all properties que va entre el fondo y la seccion de galería,  pero no se va a mostrar en el escritorio solo en el responsivo*/
+    .view{
+        display: none
+        ;
+    }
+    .flecha{
+        display: none;
+    }
+
+    @media screen and (max-width: 320px){ 
+        .contview{ /*mi contenedor contiene la flecha y el view*/
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .view,
+        .flecha{
+            display: block;
+        }
+
+        .view h6{
+            margin: 0px;
+            color: #df991b;
+            font-size: 20px;
+            font-family: brandon;
+        }
+
+        .flecha img{
+            width: 20px;
+            height: auto;
+        }
+    }
+    
+
 
 
 /*clase del 18/12/2024 con Bauti, seccion 1 tres imagenes en el 50% de la pantalla y contenido: texto / botones en el otro 50% de la pantalla*/
@@ -601,6 +639,7 @@ section{
     max-width: 100%; /* Limita el ancho máximo del section al 100% del contenedor padre. Asegura que la sección nunca sea más ancha que el contenedoren el que se encuentra, se evita el desborde*/
     overflow-x: hidden; /* lo utilizamos para evitar el scroll horizontal no deseado*/
     padding: 100px;
+    margin-bottom: 0;
     }
 
         #galeria{
@@ -692,7 +731,7 @@ footer{
     /*clase del 17 de diciembre, teniamos un height de 500 al principio para ver el alto de nuestro contenedor,  pero lo sacamos al ultimo para que nuestross textos ocupen el espacio asignado*/
     width: 100%;
     background-color: black;
-    margin-top: 150px;
+    margin-top: 0px;
 
     .cuadronegro{
         color: white;
@@ -777,10 +816,11 @@ footer{
             background-color: #26282b;
             width: 80%;
             margin: auto;
-            transform: translateY(-50%); /*con el transform- translate-y: me mueve el cuadro para arriba, abajo, izquierda o derecha*/
+            transform: translateY(-50%) scale(0.9); /*con el transform- translate-y: me mueve el cuadro para arriba, abajo, izquierda o derecha*/
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            
         }
          
             .seccionuno .botones{
