@@ -118,21 +118,21 @@ nav{
 
 
 /*responsivo del nav/topbar*/
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
     /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de este el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
     nav{
         grid-template-columns: 1fr;
         
-        #logo{
-            display: none;
+        #logo{ /*este es el logo de uniqluxury*/
+            display: none !important;
         }
 
-        #logocirculo {
-            display: inline-block; /* Mostrar logo circular */
+        #logocirculo { /*el la lupa*/
+            display: inline-block !important; /* Mostrar logo circular */
             width: 24px; /* Tamaño ajustado del logo circular */
             height: 24px;
             margin-left: 10px; /* para ajustar el el tamaño si es necesario */
-            transform: translateY(31px);
+            transform: translateY(30px);
         }
 
           
@@ -158,6 +158,165 @@ nav{
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de este el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
+    nav{
+        grid-template-columns: 1fr;
+        
+        #logo{ /*este es el logo de uniqluxury*/
+            display: none !important;
+        }
+
+        #logocirculo { /*el la lupa*/
+            display: inline-block !important; /* Mostrar logo circular */
+            width: 24px; /* Tamaño ajustado del logo circular */
+            height: 24px;
+            margin-left: 10px; /* para ajustar el el tamaño si es necesario */
+            transform: translateY(30px);
+        }
+
+          
+        .links{
+            grid-template-columns: 1fr;
+            
+            .idiomas{
+                grid-template-columns: 1fr;
+                justify-items: end;
+
+                img{
+                    transform: translateY(-20px);
+                }
+                
+                a{
+                    display: none;
+                }
+            }
+            
+            .registro{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /*aquí empiezo con el responsivo del topbar la primera parte de mi proyecto en el cual tengo el topbar y dentro de este el nav (uniqluxury,login, singup, raya media, esp, eng y logo hamburguesa*/
+    nav{
+        grid-template-columns: 1fr;
+        
+        #logo{ /*este es el logo de uniqluxury*/
+            transform: translate(20px, 30px);                
+        }
+
+        #logocirculo { /*es la lupa*/
+            display: none;
+        }
+
+          
+        .links{
+            grid-template-columns: 1fr;
+            
+            .idiomas{
+                grid-template-columns: 1fr;
+                justify-items: end;
+
+                img{
+                    transform: translateY(-20px);
+                }
+                
+                a{
+                    display: none;
+                }
+            }
+            
+            .registro{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    /* Restaurar #topbar */
+    #topbar {
+        background-color: rgba(10, 19, 1, 0.1); /* Color original */
+        height: 100px;
+        position: fixed;
+        z-index: 1;
+    }
+
+    /* Restaurar nav */
+    nav {
+        width: 100%;
+        height: 100px;
+        display: grid;
+        grid-template-columns: 3fr 2fr; /* Logo 3 partes, enlaces 2 partes */
+        align-items: center;
+    }
+
+    /* Logo principal */
+    #logo {
+        margin-left: 50px; /* Espaciado original */
+        display: block;
+    }
+
+    /* Ocultar logos secundarios */
+    #logocirculo,
+    #logomobile {
+        display: none;
+    }
+
+    /* Restaurar enlaces */
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Registro e idiomas */
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* Restaurar registro */
+    .links .registro {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr; /* LOG IN | Línea | SIGN UP */
+    }
+
+    /* Línea divisoria */
+    .links .registro #rayamedia {
+        height: 100%;
+        width: 1px;
+        background-color: white;
+    }
+
+    /* Restaurar idiomas */
+    .links .idiomas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* ESP | ENG | Icono */
+        align-items: center;
+    }
+
+    .links .idiomas img {
+        margin-right: 40px; /* Icono con margen */
+    }
+
+    /* Restaurar estilos de enlaces */
+    .links a {
+        text-decoration: none;
+        color: white;
+        width: 125px;
+        font-family: brandon;
+        font-size: 15px;
+        line-height: 45px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    /* Enlace gris */
+    .links a.grey {
+        color: #7E7E7E;
+    }
+}
+
 
 /* Fondo
 Vamos a darle todas las propiedades y características a nuestro fondo*/
@@ -294,7 +453,132 @@ input::placeholder{
     }
 }
 /*responsivo del fondo*/
-@media (max-width: 320px){
+
+@media screen and (min-width: 1025px) {
+    /* Fondo principal */
+    #imgprincipal {
+        width: 100%; /* Ocupa el ancho completo */
+        height: 1350px; /* Mantén la altura original */
+        object-fit: cover; /* Efecto de zoom */
+        position: relative;
+        filter: brightness(0.5); /* Oscurecer ligeramente */
+    }
+
+    /* Barra superior */
+    #topbar {
+        background-color: rgba(10, 19, 1, 0.5); /* Color original */
+        height: 100px;
+        width: 100%;
+        position: fixed; /* Siempre visible */
+    }
+
+    /* Contenedor del buscador */
+    .contbusca {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        top: 130px;
+        right: 200px; /* Distancia desde el borde derecho */
+    }
+
+    /* Input del buscador */
+    .buscador input {
+        padding: 10px;
+        padding-right: 40px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        width: 250px;
+        box-sizing: border-box;
+        background-color: transparent;
+        color: white;
+    }
+
+    /* Lupa dentro del buscador */
+    .buscador img {
+        position: absolute;
+        right: 30px;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    input::placeholder {
+        font-family: brandon;
+        color: white;
+    }
+
+    /* Títulos principales */
+    #titulos {
+        position: absolute;
+        top: 450px; /* Altura desde la parte superior */
+        margin-left: 7vw; /* Mueve el bloque desde el borde izquierdo */
+        color: white;
+
+        h2 {
+            color: #B4B7B7;
+            font-family: PFregaldisplay;
+            font-weight: 400;
+            font-size: 29px;
+            line-height: 45px;
+        }
+
+        h1 {
+            color: white;
+            font-family: brandon;
+            font-size: 50px;
+            line-height: 45px;
+        }
+
+        button {
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 50px;
+            padding: 15px 70px; /* Espaciado original */
+            color: white;
+            font-family: brandon;
+            height: 60px;
+        }
+    }
+
+    /* Redes sociales */
+    #redes {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 41px 25px 25px 25px 25px;
+        width: 45px;
+        justify-items: center;
+        position: fixed;
+        top: 360px; /* Posición desde la parte superior */
+        left: 25px; /* Distancia desde el borde izquierdo */
+
+        img {
+            display: block; /* Imágenes una debajo de otra */
+            margin-top: 20px;
+        }
+
+        p {
+            transform: rotate(90deg); /* Texto rotado */
+            display: inline-block;
+            color: #7E7E7E;
+            font-family: brandong;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 45px;
+        }
+
+        #rayita {
+            height: 30px;
+            width: 1px;
+            border-left: 1px solid;
+            margin-top: 25px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px){
 
     #imgprincipal{
         width: 100%;
@@ -375,7 +659,172 @@ input::placeholder{
     }
 }
 
-/*esgte es mi view all properties que va entre el fondo y la seccion de galería,  pero no se va a mostrar en el escritorio solo en el responsivo*/
+@media screen and (max-width: 600px){
+
+    #imgprincipal{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .contbusca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .buscador{
+        position: relative;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .buscador input{ /*boton ex. villa budapest*/
+        width: 100%; 
+        padding: 10px;
+        padding-right: 40px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        position: absolute; 
+        top: -425px;
+        /*le puse position absolute porque mi bototn se ubicaba en la parte de abajo y el top -425px es el que subio a mi boton*/
+        background-color: transparent;
+        }
+    
+        .buscador input::placeholder{ /*boton ex. villa budapest*/
+            text-align: center;
+            color: white;
+        }
+
+    .buscador img { /*es la lupa que vadentro del ex. villa budapest*/
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-2080%);
+        width: 17px;
+        height: 20px;
+    }
+
+    #titulos { /*dentro de esto tengo el luxury, real estate y el button view ll properties*/
+        transform: translateY(-80%);
+        top: 450px; /* mis titulosestaban fuera del fondo y con el top 270px lo subi */
+        margin-left: 7vw; /* Ajusta si es necesario centrarlo */
+        text-align: center; /* Asegura que el contenido esté centrado */
+        
+    }
+
+    #titulos h1, #titulos h2 { /* h2 luxury, h1 real state */
+        font-size: 40px; /* Reduce el tamaño de la fuente para que se ajuste bien */
+        line-height: 50px;
+    }
+
+    #titulos button { /*View all properties*/
+        padding: 10px 5px;
+        border-radius: 25px;
+        font-size: 15px; /* Ajusta el tamaño del texto del botón */
+        font-family: brandon;
+        width: auto;
+        height: fit-content;
+    }
+
+    #imgprincipal {
+        height: 500px; /* asegurar que el fondo tenga suficiente altura para agregar los titulos */
+        object-fit: cover;
+    }
+   
+    #redes {
+        display: none; /* Oculta el contenedor de redes sociales */
+    }
+}
+
+@media screen and (max-width: 320px){
+
+    #imgprincipal{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .contbusca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .buscador{
+        position: relative;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .buscador input{ /*boton ex. villa budapest*/
+        width: 100%; 
+        padding: 10px;
+        padding-right: 40px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        position: absolute; 
+        top: -425px;
+        /*le puse position absolute porque mi bototn se ubicaba en la parte de abajo y el top -425px es el que subio a mi boton*/
+        background-color: transparent;
+        }
+    
+        .buscador input::placeholder{ /*boton ex. villa budapest*/
+            text-align: center;
+            color: white;
+        }
+
+    .buscador img { /*es la lupa que vadentro del ex. villa budapest*/
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-2080%);
+        width: 17px;
+        height: 20px;
+    }
+
+    #titulos { /*dentro de esto tengo el luxury, real estate y el button view ll properties*/
+        transform: translateY(-80%);
+        top: 450px; /* mis titulosestaban fuera del fondo y con el top 270px lo subi */
+        margin-left: 7vw; /* Ajusta si es necesario centrarlo */
+        text-align: center; /* Asegura que el contenido esté centrado */
+        
+    }
+
+    #titulos h1, #titulos h2 { /* h2 luxury, h1 real state */
+        font-size: 40px; /* Reduce el tamaño de la fuente para que se ajuste bien */
+        line-height: 50px;
+    }
+
+    #titulos button { /*View all properties*/
+        padding: 10px 5px;
+        border-radius: 25px;
+        font-size: 15px; /* Ajusta el tamaño del texto del botón */
+        font-family: brandon;
+        width: auto;
+        height: fit-content;
+    }
+
+    #imgprincipal {
+        height: 500px; /* asegurar que el fondo tenga suficiente altura para agregar los titulos */
+        object-fit: cover;
+    }
+   
+    #redes {
+        display: none; /* Oculta el contenedor de redes sociales */
+    }
+}
+
+
+
+
+/*este es mi view all properties que va entre el fondo y la seccion de galería,  pero no se va a mostrar en el escritorio solo en el responsivo*/
     .view{
         display: none
         ;
@@ -410,8 +859,33 @@ input::placeholder{
         }
     }
     
+    @media screen and (max-width: 600px){ 
+        .contview{ /*mi contenedor contiene la flecha y el view*/
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+        }
 
+        .view,
+        .flecha{
+            display: block;
+        }
 
+        .view h6{
+            margin: 0px;
+            color: #df991b;
+            font-size: 30px;
+            font-family: brandon;
+        }
+
+        .flecha img{
+            width: 20px;
+            height: auto;
+        }
+    }
+
+        
 
 /*clase del 18/12/2024 con Bauti, seccion 1 tres imagenes en el 50% de la pantalla y contenido: texto / botones en el otro 50% de la pantalla*/
 .seccion1{
@@ -423,7 +897,7 @@ input::placeholder{
     .galeria{ /*estan lass 3 imagenes*/
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 20px;
+        gap:20px;
             *{
                 margin: 0;
             padding: 0;
@@ -432,9 +906,8 @@ input::placeholder{
 
             .primera{/*casa larga*/
                 grid-column: span 2;
-                overflow: hidden;
-                width: 74%;
-            }
+                width: 100%;
+                            }
 
             .ultimas{ /*dentro de ultimas estan la casa 2 y 3*/
                 grid-column: span 5;
@@ -541,8 +1014,8 @@ input::placeholder{
 }
 
 
-@media (max-width: 320px) {
-    /* aquí estoy haciendo el responsivo de la seccion1 de lass 3 imagenes*/
+@media screen and (max-width: 320px) {
+    /* aquí estoy haciendo el responsivo de la seccion1 de las 3 imagenes*/
     
     .seccion1{ /*dentro de esta seccion ya no va a ver la seccion de galería y la seccion de contenido,  es por eso que solo ponemos una sola sección con el grid-template-colum 1fr*/
         grid-template-columns: 1fr;
@@ -578,6 +1051,107 @@ input::placeholder{
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    /* aquí estoy haciendo el responsivo de la seccion1 de las 3 imagenes*/
+    
+    .seccion1{ /*dentro de esta seccion ya no va a ver la seccion de galería y la seccion de contenido,  es por eso que solo ponemos una sola sección con el grid-template-colum 1fr*/
+        grid-template-columns: 1fr;
+        position: relative;
+        
+        .contenido{
+            display: none;
+        }
+
+        .galeria{
+            
+            .primera{
+                /* uso esta propiedad  display-none,para que no me aparezca la primera foto cuando achico la pantalla,  como es es caso del los celulares*/
+                display: none;
+            }
+
+            .segunda{
+                /* uso esta propiedad  grid-column span 10,para que la segunda imagen me aparezca cuando achico la pantalla,  como es es caso del los celulares*/
+                grid-column: span 10;
+            }
+
+            .tercera{
+                /* uso esta propiedad  grid-column span 2,para que la segunda imagen me aparezca cuando achico la pantalla,  como es es caso del los celulares*/
+                grid-column:  span 2;
+                height: 100%;
+                display: flex;
+                width: 160%;
+            }
+
+            .textos{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .seccion1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+
+        .primera, .segunda, .tercera {
+            grid-column: span 4;
+            position: relative;
+            height: 100%; /* Igualar altura */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textos {
+            position: absolute;
+            bottom: px; /* Baja el texto más cerca del borde inferior */
+            left: 0px; /* Ajusta la posición horizontal */
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            color: white;
+            transform: translateY(10%); /* Baja aún más el texto */
+        }
+
+        .textosuno {
+            color: white;
+        }
+
+        .textosdos {
+            color: black;
+            background-color: white;
+            width: 100%;
+        }
+
+        h6 {
+            font-size: 18px;
+            font-family: pfrr;
+        }
+
+        h5 {
+            font-size: 22px;
+            font-family: pfrm;
+        }
+    }
+
+    .contenido {
+        display: none !important; /* Oculta esta sección */
+    }
+}
+
 
 
   
@@ -616,7 +1190,7 @@ input::placeholder{
     margin: 0; /* Asegúrate de que no haya márgenes adicionales */
 }
 
-@media (max-width: 500px){
+@media screen and (max-width: 320px){
    
    .container{
     grid-template-columns: 1fr;
@@ -631,6 +1205,33 @@ input::placeholder{
 
 }
 
+@media screen and (max-width: 600px){
+   
+    .container{
+     grid-template-columns: 1fr;
+    }
+    .luxury h2{
+     display: none;
+    }
+    .Developments h1{
+     font-size: 35px;
+     margin-left: 50px;
+    } 
+ }
+ 
+ @media screen and (max-width: 1024px){
+   
+    .container{
+     grid-template-columns: 1fr;
+    }
+    .luxury h2{
+     display: none;
+    }
+    .Developments h1{
+     font-size: 35px;
+     margin-left: 50px;
+    } 
+ }
 
 /*8 imagenes 4ta. sección*/
 section{
@@ -677,8 +1278,142 @@ section{
         font-family: PFregaldisplay;
     }
 
-       
-    @media (max-width: 320px){
+    @media screen and (min-width: 1025px) {
+        section {
+            grid-column: span 12;
+            min-height: 100vh; /* Mantén la altura mínima de pantalla completa */
+            max-width: 100%; /* Asegura que no haya desbordes horizontales */
+            overflow-x: hidden; /* Elimina scroll horizontal no deseado */
+            padding: 100px;
+            margin-bottom: 0;
+        }
+    
+        #galeria {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+            column-gap: 1%; /* Espaciado entre columnas */
+        }
+    
+        #galeria img {
+            width: 100%; /* Ocupa el ancho completo de la celda */
+        }
+    
+        .contenedor {
+            max-height: 64%; /* Limita la altura de las imágenes */
+            overflow: hidden; /* Evita el desbordamiento */
+        }
+    
+        .texto h6 {
+            color: #464547;
+            font-size: 17px; /* Tamaño original */
+            width: 100%;
+            margin-left: 20px;
+            font-family: pfrr;
+        }
+    
+        .texto h5 {
+            color: black;
+            font-size: 25px; /* Tamaño original */
+            width: 100%;
+            margin-left: 20px;
+            font-family: PFregaldisplay;
+        }
+    }
+    
+
+    @media screen and (max-width: 1024px) {
+        section {
+            padding: 0;
+            margin-bottom: 0;
+    
+            #galeria {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 2 columnas */
+                grid-auto-flow: row; /* Asegura que las imágenes llenen filas de forma automática */
+                gap: 10px; /* Espaciado uniforme entre imágenes */
+            }
+    
+            #galeria img {
+                width: 100%; /* Ocupa el ancho completo de cada celda */
+                height: auto; /* Mantiene la proporción original */
+                object-fit: cover; /* Recorta si es necesario */
+                display: block; /* Asegúrate de que estén visibles */
+            }
+    
+            /* Mostrar las imágenes deseadas */
+            #galeria img[src="Imagenes/1.jpg"],
+            #galeria img[src="Imagenes/2.jpg"],
+            #galeria img[src="Imagenes/3.jpg"],
+            #galeria img[src="Imagenes/4.jpg"],
+            #galeria img[src="Imagenes/5.jpg"],
+            #galeria img[src="Imagenes/6.jpg"],{
+                display: block; /* Muestra estas imágenes */
+            }
+    
+            /* Ocultar las imágenes restantes */
+            #galeria img[src="Imagenes/7.jpg"],
+            #galeria img[src="Imagenes/8.jpg"] {
+                display: none; /* Oculta las imágenes no deseadas */
+            }
+    
+            .contenedor {
+                max-height: none; /* Permite que las imágenes ocupen toda su altura */
+                overflow: hidden; /* Evita recortes no deseados */
+            }
+    
+            .texto h6,
+            .texto h5 {
+                display: none; /* Oculta los textos */
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        section {
+            padding: 0;
+            margin-bottom: 0;
+    
+            #galeria {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+                grid-auto-flow: row; /* Asegura que las imágenes llenen filas de forma automática */
+                gap: 10px; /* Espaciado uniforme entre imágenes */
+            }
+    
+            #galeria img {
+                width: 100%; /* Ocupa el ancho completo de cada celda */
+                height: auto; /* Mantiene la proporción original */
+                object-fit: cover; /* Recorta si es necesario */
+                display: block; /* Asegúrate de que estén visibles */
+            }
+    
+            /* Mostrar las imágenes deseadas */
+            #galeria img[src="Imagenes/1.jpg"],
+            #galeria img[src="Imagenes/2.jpg"],
+            #galeria img[src="Imagenes/3.jpg"],
+            #galeria img[src="Imagenes/4.jpg"],
+            #galeria img[src="Imagenes/5.jpg"],
+            #galeria img[src="Imagenes/6.jpg"],{
+                display: block; /* Muestra estas imágenes */
+            }
+    
+            /* Ocultar las imágenes restantes */
+            #galeria img[src="Imagenes/7.jpg"],
+            #galeria img[src="Imagenes/8.jpg"] {
+                display: none; /* Oculta las imágenes no deseadas */
+            }
+    
+            .contenedor {
+                max-height: none; /* Permite que las imágenes ocupen toda su altura */
+                overflow: hidden; /* Evita recortes no deseados */
+            }
+    
+            .texto h6,
+            .texto h5 {
+                display: none; /* Oculta los textos */
+            }
+        }
+    }     
+    @media screen and (max-width: 320px){
         section{
             padding: 0;
             margin-bottom: 0;
@@ -696,7 +1431,7 @@ section{
                 object-fit: cover; /* para qu se recorten correctamente */
             }
 
-            #galeria img[src="Imagenes/2.jpg"],
+            
             #galeria img[src="Imagenes/4.jpg"],
             #galeria img[src="Imagenes/5.jpg"],
             #galeria img[src="Imagenes/6.jpg"],
@@ -706,7 +1441,6 @@ section{
             .contenedor {
                 max-height: none; /* Permite que las imágenes ocupen su altura completa */
                 overflow: hidden; /* Asegúrate de que no haya recortes */
-
             }
                        
             .texto h6 {
@@ -718,7 +1452,10 @@ section{
             }
         }
     }
-
+  
+    
+    
+    
 
     /*desde este punto vamos a empezar a armar el footer*/
     *{
@@ -892,7 +1629,7 @@ footer{
         
 }
 
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
     /* aquí estoy haciendo el responsivo para el footer seccionUno*/
     footer{
         margin-top: 0;
@@ -936,13 +1673,95 @@ footer{
         }
     }
 }
-@media (max-width: 320px) {
-    
 
-  
+@media screen and (max-width: 600px) {
+    /* aquí estoy haciendo el responsivo para el footer seccionUno*/
+    footer{
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 20px; /*para tener un margen en la parte de abajo de mi email*/
+
+        .seccionuno{
+            display: none;
+        }
+
+        .cuadronegro{
+            .enlaces{
+                grid-template-columns: repeat(2, 1fr);
+
+                .primera{
+                    grid-column: span 2;
+                }
+
+                .medio{
+                    justify-self: baseline;
+                    margin-top: 15px;
+                }
+
+                
+                .ultima{
+                    justify-self: baseline;
+                    grid-column: span 2;
+                    margin-top: 30px;
+                    text-align: left;
+                }
+            }
+            .copyright{
+                display: none;
+            }
+            .ultima p:first-child{
+                display: none;
+            }
+            .ultima p:nth-child(2){
+                font-size: 25px;
+            }
+        }
+    }
 }
 
+@media screen and (max-width: 1024px) {
+    /* aquí estoy haciendo el responsivo para el footer seccionUno*/
+    footer{
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 20px; /*para tener un margen en la parte de abajo de mi email*/
 
+        .seccionuno{
+            display: none;
+        }
 
+        .cuadronegro{
+            .enlaces{
+                grid-template-columns: repeat(2, 1fr);
+
+                .primera{
+                    grid-column: span 2;
+                }
+
+                .medio{
+                    justify-self: baseline;
+                    margin-top: 15px;
+                }
+
+                
+                .ultima{
+                    justify-self: baseline;
+                    grid-column: span 2;
+                    margin-top: 30px;
+                    text-align: left;
+                }
+            }
+            .copyright{
+                display: none;
+            }
+            .ultima p:first-child{
+                display: none;
+            }
+            .ultima p:nth-child(2){
+                font-size: 25px;
+            }
+        }
+    }
+}
 
 
