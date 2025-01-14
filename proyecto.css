@@ -379,9 +379,9 @@ input::placeholder{
 }
 
 #titulos{
-    position: absolute; /*para subir o bajar un bloque en este caso tengo dentro de titulos a: luxury, real estate y view all propertier, utilizo primero el position absolute y luego lo subo o lo bajo con  top*/
+    position: absolute; /* xxxxxxxxxxxxxxxxxpara subir o bajar un bloque en este caso tengo dentro de titulos a: luxury, real estate y view all propertier, utilizo primero el position absolute y luego lo subo o lo bajo con  top*/
     top: 450px;
-    margin-left: 7vw; /*para que se mueva el bloque del borde dde la pantalla hacia la izquierda, utilizo el margin left*/
+    margin-left: 7vw; /*xxxxxxxxxxxxxxxpara que se mueva el bloque del borde dde la pantalla hacia la izquierda, utilizo el margin left*/
     color: white;
 
     h2{
@@ -414,7 +414,7 @@ input::placeholder{
     }
 }
 
-/*Vamos a poner el follow y los íconos de las redes sociales*/
+/*Vamos a poner el follow y los íconos de las redes socialesxxxxxxxxxx*/
 
 #redes{
         display: grid;
